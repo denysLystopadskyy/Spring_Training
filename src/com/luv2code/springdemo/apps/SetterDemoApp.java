@@ -1,6 +1,8 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.apps;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.luv2code.springdemo.BjjCoach;
 
 /**
  * Created by denys.lystopadskyy on 12/17/2016.
@@ -12,7 +14,7 @@ public class SetterDemoApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         //retrieve bean from spring container
-        CricketCoach coach = context.getBean("myCricketCoach", CricketCoach.class);
+        BjjCoach coach = context.getBean("bjjCoach", BjjCoach.class);
 
         //call methods on the bean
         System.out.println(coach.getDailyWorkout());
