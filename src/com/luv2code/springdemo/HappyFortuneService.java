@@ -2,9 +2,9 @@ package com.luv2code.springdemo;
 
 import java.util.Random;
 
-/**
- * Created by denys.lystopadskyy on 12/17/2016.
- */
+import org.springframework.stereotype.Component;
+
+@Component
 public class HappyFortuneService implements FortuneService {
 
     Random random = new Random();
