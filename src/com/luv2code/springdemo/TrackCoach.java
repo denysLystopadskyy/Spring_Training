@@ -1,10 +1,14 @@
 package com.luv2code.springdemo;
 
-/**
- * Created by denys.lystopadskyy on 12/14/2016.
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class TrackCoach implements Coach {
 
+    @Autowired
+    @Qualifier("badFortuneService")
     private FortuneService fortuneService;
 
     public TrackCoach(FortuneService fortuneService) {

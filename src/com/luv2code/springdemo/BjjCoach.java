@@ -1,5 +1,8 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +21,7 @@ public class BjjCoach implements Coach {
     @Value("${foo.email}")
     private String emailAddress;
 
+    @Value("${foo.team}")
     private String team;
 
     @Override
@@ -28,6 +32,16 @@ public class BjjCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Init method launched.");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Destroy method launched.");
     }
 
     public String getEmailAddress() {
